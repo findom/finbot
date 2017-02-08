@@ -29,7 +29,7 @@ exports.handle = function handle(client) {
     },
 
     prompt() {
-      client.addTextResponse('greeting/bothering')
+      client.addResponse('greeting/bothering')
       client.done()
     }
   })
@@ -41,7 +41,7 @@ exports.handle = function handle(client) {
     },
 
     prompt() {
-      client.addTextResponse('goodbye/invoice')
+      client.addResponse('goodbye/invoice')
       client.done()
     }
   })
