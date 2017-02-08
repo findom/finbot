@@ -6,7 +6,7 @@
   "scripts": {
     "start": "initai-dev-server"
   },
-  "author": "<Finn Prince> <<princepayme@protonmail.com>>",
+  "author": "Finn Prince <princepayme@protonmail.com>",
   "license": "UNLICENSED",
   "dependencies": {
     "initai-dev-server": "^0.4.8",
