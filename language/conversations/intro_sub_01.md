@@ -9,14 +9,14 @@ Hello!
 < Why are you bothering me?
 * greeting
 
-I'm sorry, master.
-* sorry_from_sub
-
 I want to be your sub.
 * request_submission
 
-< Apologies rejected.
-* sorry_from_sub
+< It starts at $50 USD.
+* request_submission
 
-< How would you serve me, sub?
+I can't afford that. Bye.
+* goodbye
+
+< Get the fuck out of my face. You owe me $10 USD for wasting my time, loser.
 * request_submission
