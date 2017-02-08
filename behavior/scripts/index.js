@@ -1,6 +1,6 @@
 'use strict'
 
-const getCurrentWeather = require('./lib/getCurrentWeather')
+//const getCurrentWeather = require('./lib/getCurrentWeather')
 
 exports.handle = function handle(client) {
   const collectCity = client.createStep({
