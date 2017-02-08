@@ -1,5 +1,5 @@
 ---
-title: intro-sub-01
+title: intro_sub_01
 timestamp: 2017-02-08T00:29:51.899081616-05:00
 ---
 
@@ -7,16 +7,16 @@ Hello!
 * greeting
 
 < Why are you bothering me?
-* request_confirmation
+* greeting
 
 I'm sorry, master.
-* affirmative/confirm
+* sorry_from_sub
 
 I want to be your sub.
-* out_of_domain
+* request_submission
 
 < Apologies rejected.
-* affirmative
+* sorry_from_sub
 
 < How would you serve me, sub?
-* request_confirmation
+* request_submission
