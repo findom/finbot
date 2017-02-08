@@ -69,49 +69,38 @@ exports.handle = function handle(client) {
   })
 
   const provideWeather = client.createStep({
-    satisfied() {
-      return false
-    },
+  satisfied() {
+    return false
+  },
 
-    /*prompt() {
-        let weatherData = {
-          temperature: 60,
-          condition: 'sunny',
-          city: client.getConversationState().weatherCity.value,
-        }
-
-        client.addResponse('provide_weather/current', weatherData)
-        client.done()
-      }*/
   prompt(callback) {
-      const environment = client.getCurrentApplicationEnvironment()
-      getCurrentWeather(environment.weatherAPIKey, client.getConversationState().weatherCity.value, resultBody => {
-        if (!resultBody || resultBody.cod !== 200) {
-          console.log('Error getting weather.')
-          callback()
-          return
-        }
-
-        const weatherDescription = (
-          resultBody.weather.length > 0 ?
-          resultBody.weather[0].description :
-          null
-        )
-
-        const weatherData = {
-          temperature: Math.round(resultBody.main.temp),
-          condition: weatherDescription,
-          city: resultBody.name,
-        }
-
-        console.log('sending real weather:', weatherData)
-        client.addResponse('provide_weather/current', weatherData)
-        client.done()
-
+    getCurrentWeather(client.getConversationState().weatherCity.value, resultBody => {
+      if (!resultBody || resultBody.cod !== 200) {
+        console.log('Error getting weather.')
         callback()
-      })
-    },
-  })
+        return
+      }
+
+      const weatherDescription = (
+        resultBody.weather.length > 0 ?
+        resultBody.weather[0].description :
+        null
+      )
+
+      const weatherData = {
+        temperature: resultBody.main.temp,
+        condition: weatherDescription,
+        city: resultBody.name,
+      }
+
+      console.log('sending real weather:', weatherData)
+      client.addResponse('provide_weather/current', weatherData)
+      client.done()
+
+      callback()
+    })
+  }
+})
 
   // Get city user input and output weather.
   client.runFlow({
