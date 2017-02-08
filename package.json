@@ -1,12 +1,12 @@
 {
   "name": "finbot",
   "version": "0.0.0",
-  "description": "A tale of love, of fin and bot.",
+  "description": "A findom bot with the persona of a sadistic prince.",
   "main": "behavior/scripts/index.js",
   "scripts": {
     "start": "initai-dev-server"
   },
-  "author": "<my-name> <<my-email-address>>",
+  "author": "<Finn Prince> <<princepayme@protonmail.com>>",
   "license": "UNLICENSED",
   "dependencies": {
     "initai-dev-server": "^0.4.8",
