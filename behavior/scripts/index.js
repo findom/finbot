@@ -73,7 +73,17 @@ exports.handle = function handle(client) {
       return false
     },
 
-    prompt(callback) {
+    prompt() {
+        let weatherData = {
+          temperature: 60,
+          condition: 'sunny',
+          city: client.getConversationState().weatherCity.value,
+        }
+
+        client.addResponse('provide_weather/current', weatherData)
+        client.done()
+      }
+  /*  prompt(callback) {
       const environment = client.getCurrentApplicationEnvironment()
       getCurrentWeather(environment.weatherAPIKey, client.getConversationState().weatherCity.value, resultBody => {
         if (!resultBody || resultBody.cod !== 200) {
@@ -100,7 +110,7 @@ exports.handle = function handle(client) {
 
         callback()
       })
-    },
+    },*/
   })
 
   // Get city user input and output weather.
