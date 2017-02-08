@@ -59,7 +59,7 @@ exports.handle = function handle(client) {
     },
   })
 
-  # Get city user input and output weather.
+  // Get city user input and output weather.
   client.runFlow({
   classifications: {},
   streams: {
