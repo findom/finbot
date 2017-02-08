@@ -59,31 +59,6 @@ exports.handle = function handle(client) {
     },
   })
 
-# Functions to collect user city.
-  const collectCity = client.createStep({
-    satisfied() {
-      return Boolean(client.getConversationState().weatherCity)
-    },
-
-    prompt() {
-      // Need to prompt user for city
-      console.log('Need to ask user for city')
-      client.done()
-    },
-  })
-
-# Function to provide city weather.
-  const provideWeather = client.createStep({
-    satisfied() {
-      return false
-    },
-
-    prompt() {
-      // Need to provide weather
-      client.done()
-    },
-  })
-
   # Get city user input and output weather.
   client.runFlow({
   classifications: {},
