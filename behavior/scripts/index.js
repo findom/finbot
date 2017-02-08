@@ -3,6 +3,50 @@
 //const getCurrentWeather = require('./lib/getCurrentWeather')
 
 exports.handle = function handle(client) {
+  // The Prince will greet people.
+  const sayHello = client.createStep({
+    satisfied() {
+      return Boolean(client.getConversationState().helloSent)
+    },
+
+    prompt() {
+      client.addResponse('welcome')
+      client.addResponse('provide/documentation', {
+        documentation_link: 'http://docs.init.ai',
+      })
+      client.addResponse('provide/instructions')
+      client.updateConversationState({
+        helloSent: true
+      })
+      client.done()
+    }
+  })
+
+  // The Prince dislikes being disturbed.
+  const handleGreeting = client.createStep({
+    satisfied() {
+      return false
+    },
+
+    prompt() {
+      client.addTextResponse('Why are you bothering me?')
+      client.done()
+    }
+  })
+
+  // The Prince charges an invoice as he dismissed people.
+  const handleGoodbye = client.createStep({
+    satisfied() {
+      return false
+    },
+
+    prompt() {
+      client.addTextResponse('You owe me $10. Bye.')
+      client.done()
+    }
+  })
+
+// The weather bot get city input.
   const collectCity = client.createStep({
     satisfied() {
       return Boolean(client.getConversationState().weatherCity)
