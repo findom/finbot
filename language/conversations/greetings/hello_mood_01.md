@@ -4,7 +4,7 @@ timestamp: 2017-02-08T13:57:18.026852205-05:00
 ---
 
 Hi!
-* greeting/neutral
+* greeting
 
 < How are you feeling today?
 * prompt/mood
