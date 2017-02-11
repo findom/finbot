@@ -29,7 +29,7 @@ exports.handle = function handle(client) {
     },
 
     prompt() {
-      client.addResponse('greeting/bothering')
+      client.addResponse('greeting/ask_bothered')
       client.done()
     }
   })
@@ -45,6 +45,31 @@ exports.handle = function handle(client) {
       client.done()
     }
   })
+
+
+  // The weather bot get city input.
+    const collectXp = client.createStep({
+      satisfied() {
+        return Boolean(client.getConversationState().weatherCity)
+      },
+
+      extractInfo() {
+       const city = client.getFirstEntityWithRole(client.getMessagePart(), 'city')
+        if (city) {
+          client.updateConversationState({
+            weatherCity: city,
+          })
+          console.log('User wants the weather in:', city.value)
+        }
+      },
+
+      prompt() {
+        //client.addResponse('prompt/weather_city')
+        client.done()
+      },
+    })
+
+
 
 // The weather bot get city input.
   const collectCity = client.createStep({
@@ -126,19 +151,22 @@ exports.handle = function handle(client) {
 
   // Get city user input and output weather.
   client.runFlow({
-  classifications: {
-    goodbye: 'goodbye',
-    greeting: 'greeting',
-    getMood: 'prompt/current_mood'},
-  streams: {
-    // Add a Stream for goodbye and assign it a Step
-    goodbye: handleGoodbye,
-    greeting: handleGreeting,
-    main: 'getWeather',
-    hi: [sayHello],
-    getWeather: [collectCity, provideWeather],
-    getMood: collectMood
-    //end: [untrained]
-  }
-})
+    classifications: {
+      goodbye: 'goodbye',
+      greeting: 'greeting',
+      greeting2: 'greeting/ask_bothered'
+      getMood: 'prompt/current_mood'
+    },
+    streams: {
+      // Add a Stream for goodbye and assign it a Step
+      goodbye: handleGoodbye,
+      greeting: handleGreeting,
+      greeting2: handleGreeting,
+      main: 'getWeather',
+      hi: [sayHello],
+      getWeather: [collectCity, provideWeather],
+      getMood: collectMood
+      //end: [untrained]
+    }
+  })
 }

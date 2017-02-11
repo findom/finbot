@@ -9,8 +9,8 @@ Hi!
 < How are you feeling today?
 * prompt/mood
 
-I am crying.
-* ask_feeling/crying
+I am [crying](feeling_active).
+provide_feeling/current
 
 < Hey, you know what? you're gonna cry now, [bitch,](insult) unless you give me a [cheeseburger](price).
 * ask_feeling/crying
