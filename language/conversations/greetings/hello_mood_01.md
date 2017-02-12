@@ -7,7 +7,7 @@ Hi!
 * greeting
 
 < How are you feeling today?
-* prompt/mood
+* request_feeling
 
 I am [crying](feeling_active).
 provide_feeling/current

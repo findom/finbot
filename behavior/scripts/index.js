@@ -155,7 +155,7 @@ exports.handle = function handle(client) {
       goodbye: 'goodbye',
       greeting: 'greeting',
       greeting2: 'greeting/ask_bothered'
-      getMood: 'prompt/current_mood'
+      //getMood: 'prompt/current_mood'
     },
     streams: {
       // Add a Stream for goodbye and assign it a Step
@@ -165,7 +165,7 @@ exports.handle = function handle(client) {
       main: 'getWeather',
       hi: [sayHello],
       getWeather: [collectCity, provideWeather],
-      getMood: collectMood
+      //getMood: collectMood
       //end: [untrained]
     }
   })
