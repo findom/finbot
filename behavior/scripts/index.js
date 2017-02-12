@@ -74,6 +74,13 @@ exports.handle = function handle(client) {
 // The weather bot get city input.
   const collectCity = client.createStep({
     satisfied() {
+      const city = client.getFirstEntityWithRole(client.getMessagePart(), 'city')
+       if (city) {
+         client.updateConversationState({
+           weatherCity: city,
+         })
+         console.log('User asked for weather in new city:', city.value)
+       }
       return Boolean(client.getConversationState().weatherCity)
     },
 
@@ -144,7 +151,7 @@ exports.handle = function handle(client) {
     },
 
     prompt() {
-      client.addResponse('prompt/current_mood')
+      client.addResponse('request_user/current_mood')
       client.done()
     },
   })
