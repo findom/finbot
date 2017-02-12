@@ -1,3 +1,7 @@
+---
+title: hello_world_00
+---
+
 Hello.
 * greeting
 

@@ -7,10 +7,10 @@ Hi!
 * greeting
 
 < How are you feeling today?
-* request_feeling
+* request_user/feelingToday
 
 I am [crying](feeling_active).
 provide_feeling/current
 
-< Hey, you know what? you're gonna cry now, [bitch,](insult) unless you give me a [cheeseburger](price).
+< Hey, you know what? you're gonna cry now, bitch,insult unless you give me a cheeseburger.
 * ask_feeling/crying

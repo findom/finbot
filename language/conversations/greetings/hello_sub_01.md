@@ -21,9 +21,3 @@ I [can't afford](optout) that. Bye.
 < Get the fuck out of my face, loser.
 \n Now you have a few options. You either PayPal as instructed or gamble for one of my playlist item. :devil-smile:
 * goodbye/invoice
-
-What is the temperature in [Montreal](city)?
-* ask_current_weather/temperature
-
-< It is currently [40](temperature) degrees in [Montreal](city).
-* provide_weather/current

@@ -4,16 +4,16 @@ timestamp: 2017-02-08T01:54:15.96447978-05:00
 ---
 
 I wanna be ur [sub](experience)
-* ask_experience/sub
+* ask_xp/sub
 
-< Everyone does. It starts at $[50](price) [USD](currency).
-* provide_experience/sub
+< Everyone does. It starts at $50 USD.
+* provide_xp/subFee
 
 Okay.. that's a [bit steep](optout).
-* sub/broke
+* goodbye/optout
 
-< Are you another [broke-ass loser](insult) trying to waste my time?
-* sub/taunt
+< Are you another broke-ass loser trying to waste my time?
+* request_user/taunt
 
 No, master!
 * decline/deny

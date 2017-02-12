@@ -7,7 +7,7 @@ Hello!
 * greeting
 
 < Hi! I'm a weather bot, which city may I look up for you?
-* prompt/weather_city
+* request_user/weather_city
 
 [Halifax](city) please.
 * ask_current_weather/temperature
