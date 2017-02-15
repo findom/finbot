@@ -74,6 +74,8 @@ exports.handle = function handle(client) {
 // The weather bot get city input.
   const collectCity = client.createStep({
     satisfied() {
+      // Duplicated code so bot asks for city again but...
+      // this is not ideal. Investigate conversationState.
       const city = client.getFirstEntityWithRole(client.getMessagePart(), 'city')
        if (city) {
          client.updateConversationState({
@@ -95,7 +97,8 @@ exports.handle = function handle(client) {
     },
 
     prompt() {
-      //client.addResponse('prompt/weather_city')
+      client.addResponse('request_user/weather_city')
+      client.addResponseWithReplies('provide_weather', {foo: 'bar'}, [client.makeReplyButton('Next day', 'https://../icon.png', 'check_weather', {})])
       client.done()
     },
   })

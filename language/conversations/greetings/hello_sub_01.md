@@ -13,11 +13,10 @@ I want to be your [sub](xp).
 ask_xp_start/sub
 
 < It starts at $50 USD.
-* provide_xp_start/sub
+* provide_xp_start/sub/fee
 
 I [can't afford](optout) that. Bye.
 * goodbye/optout
 
-< Get the fuck out of my face, loser.
-\n Now you have a few options. You either PayPal as instructed or gamble for one of my playlist item. :devil-smile:
+< Get the fuck out of my face, loser. 😂 \nNow you have a few options. You either PayPal as instructed or gamble for one of my playlist item. 😈
 * goodbye/invoice

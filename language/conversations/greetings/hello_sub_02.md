@@ -4,10 +4,10 @@ timestamp: 2017-02-08T01:54:15.96447978-05:00
 ---
 
 I wanna be ur [sub](experience)
-* ask_xp/sub
+* ask_xp_start/sub
 
 < Everyone does. It starts at $50 USD.
-* provide_xp/subFee
+* provide_xp_start/sub/fee
 
 Okay.. that's a [bit steep](optout).
 * goodbye/optout
